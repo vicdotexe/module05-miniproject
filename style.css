@@ -1,0 +1,23 @@
+:root{
+    --primaryColor: rgb(52, 52, 121);
+}
+
+
+header{
+    background-color: var(--primaryColor);
+    color:white;
+}
+
+.custom-card-header{
+    background-color: var(--primaryColor);
+    color: white;
+}
+
+.custom-card-footer{
+    background-color: var(--primaryColor);
+    color: white;
+}
+
+.custom-thead{
+    background-color: orange;
+}
