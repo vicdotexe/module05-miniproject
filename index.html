@@ -22,7 +22,7 @@
         <h2>Current Time & Date:</h2>
         <h2 id="dateTime"></h2>
     </header>
-    <main class="p-3">
+    <main class="container-fluid p-3">
         <div class="row">
 
             <!-- Card -->
@@ -30,7 +30,7 @@
                 <div class="card">
                     <div class="card-header custom-card-header">Instructions</div>
                     <div class="card-body">
-                      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                      <p class="card-text">Add a project with the following criteria:</p>
                       <ul class="infoList">
                         <li>Project Name</li>
                         <li>Project Type</li>
@@ -39,7 +39,10 @@
                       </ul>
                     </div>
                     <div class="card-footer d-flex justify-content-center custom-card-footer">
-                        <a href="#" class="btn btn-primary w-100">Go somewhere</a>
+                        <!-- Button trigger modal -->
+                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+                            Add New Project
+                        </button>
                     </div>
                 </div>
             </div>
@@ -59,38 +62,47 @@
                         <th scope="col"></th>
                       </tr>
                     </thead>
-                    <tbody>
-                      <tr>
-                        <th scope="row">1</th>
-                        <td>Mark</td>
-                        <td>Otto</td>
-                        <td>@mdo</td>
-                      </tr>
-                      <tr>
-                        <th scope="row">2</th>
-                        <td>Jacob</td>
-                        <td>Thornton</td>
-                        <td>@fat</td>
-                      </tr>
-                      <tr>
-                        <th scope="row">3</th>
-                        <td>Larry</td>
-                        <td>the Bird</td>
-                        <td>@twitter</td>
-                      </tr>
+                    <tbody id="tableBody">
                     </tbody>
                   </table>
               </div>
 
+            <!-- Modal -->
+            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="false">
+                <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                    </div>
+                    <div class="modal-body d-flex flex-column">
+                    <label>Project Name</label>
+                    <input type="text" id="nameInput">
+                    <label>Project Type</label>
+                    <input type="text" id="typeInput">
+                    <label>Project Hourly Rate</label>
+                    <input type="text" id="rateInput">
+                    <label>Due Date</label>
+                    <input type="text" id="datePicker">
+                    </div>
+                    <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                    <button id="submitButton" type="button" data-dismiss="modal" class="btn btn-primary">Add</button>
+                    </div>
+                </div>
+                </div>
+            </div>
+
         </div>
 
     </main>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.27.0/moment.min.js"></script>
+    <script src="./script.js"></script>
 </body>
-
-
-<script src="https://code.jquery.com/jquery-3.6.0.js"></script>
-<script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.27.0/moment.min.js"></script>
-<script src="./script.js"></script>
-
 </html>
