@@ -40,12 +40,12 @@ function onSubmit(){
 
     if (!prev){
         prev = {};
-        prev.count = 0;
+        prev.nextId = 0;
         prev.projects = []
     }
 
-    data.id = prev.count;
-    prev.count++;
+    data.id = prev.nextId;
+    prev.nextId++;
     prev.projects.push(data);
 
     var obj = JSON.stringify(prev);
@@ -85,10 +85,26 @@ function createTableRow(data){
     var del = $("<td>")
     del.addClass("delBtn");
     del.text("X");
-    del.on("click", ()=>{tr.remove();});
+    del.on("click", ()=>{
+        tr.remove();
+        removeFromStorage(data.id);
+    });
     tr.append(del);
 
     return tr;
+}
+
+function removeFromStorage(id){
+    var hist = JSON.parse(localStorage.getItem("projects"));
+    console.log(hist);
+    index = 0;
+    for(var i = 0; i < hist.projects; i++){
+        if (hist.projects[i].id == id){
+            hist.projects.splice(data.id, 1);
+        }
+    }
+    hist.projects.splice(index, 1);
+    localStorage.setItem("projects", JSON.stringify(hist));
 }
 
 
